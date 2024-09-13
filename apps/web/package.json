@@ -44,7 +44,7 @@
     "lottie-react": "^2.4.0",
     "luxon": "^3.4.4",
     "mongodb": "^6.5.0",
-    "next": "v15.0.0-canary.148",
+    "next": "v15.0.0-canary.154",
     "node-telegram-bot-api": "^0.65.1",
     "o1js": "npm:o1js@1.6.0",
     "react": "19.0.0-rc-206df66e-20240912",
