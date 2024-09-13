@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "zknoid-store",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -22,5 +22,10 @@
   "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@proto-kit/library@0.1.1-develop.833": "patches/@proto-kit__library@0.1.1-develop.833.patch"
+    }
   }
 }
