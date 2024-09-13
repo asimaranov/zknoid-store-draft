@@ -2,6 +2,7 @@ import TerserPlugin from 'terser-webpack-plugin';
 import path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import ImageMinimizerPlugin from "image-minimizer-webpack-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -40,6 +41,16 @@ const nextConfig = {
     config.experiments = { ...config.experiments, topLevelAwait: true };
     return {
       ...config,
+      module: {
+        ...config.module,
+        rules: [
+          ...config.module.rules,
+          {
+            test: /\.(svg)$/i,
+            type: "asset",
+          },
+        ],
+      },    
       optimization: {
         minimize: true,
         minimizer: [
@@ -57,6 +68,35 @@ const nextConfig = {
               }
             },
             exclude: /node_modules/,
+          }),
+          new ImageMinimizerPlugin({
+            minimizer: {
+              implementation: ImageMinimizerPlugin.svgoMinify,
+              options: {
+                plugins: [
+                  "svgo",
+                  {
+                    plugins: [
+                      {
+                        name: "preset-default",
+                        params: {
+                          overrides: {
+                            removeViewBox: false,
+                            addAttributesToSVGElement: {
+                              params: {
+                                attributes: [
+                                  { xmlns: "http://www.w3.org/2000/svg" },
+                                ],
+                              },
+                            },
+                          },
+                        },
+                      },
+                    ]
+                  }
+                ]
+              }
+            },
           }),
         ],
       },
