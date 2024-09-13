@@ -5,6 +5,8 @@ import { useEffect, useMemo } from "react";
 import ZkNoidGameContext from "../../../lib/contexts/ZkNoidGameContext";
 import { useNetworkStore } from "../../../lib/stores/network";
 import { ZkNoidConfig } from "../../../lib/createConfig";
+import Header from "../../../components/widgets/Header";
+import Footer from "../../../components/widgets/Footer";
 
 export default function GamePageWrapper({
   gameId,
@@ -17,7 +19,7 @@ export default function GamePageWrapper({
 }) {
   const config = useMemo(
     () => zkNoidConfig.games.find((game) => game.id == gameId)!,
-    [],
+    []
   );
   const client = useMemo(() => zkNoidConfig.getClient(), []);
   const networkStore = useNetworkStore();
@@ -50,11 +52,14 @@ export default function GamePageWrapper({
         buildLocalClient: false,
       }}
     >
+      <Header />
+
       <config.page
         params={{
           competitionId: competitionId,
         }}
       />
+      <Footer />
     </ZkNoidGameContext.Provider>
   );
 }
