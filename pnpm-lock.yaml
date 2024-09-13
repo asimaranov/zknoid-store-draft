@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@proto-kit/library@0.1.1-develop.833':
+    hash: l4nw35jyuqbcpqce4frw6uerfu
+    path: patches/@proto-kit__library@0.1.1-develop.833.patch
+
 importers:
 
   .:
@@ -31,7 +36,7 @@ importers:
         version: 0.1.1-develop.833(o1js@1.6.0)(tsyringe@4.8.0)
       '@proto-kit/library':
         specifier: 0.1.1-develop.833
-        version: 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
+        version: 0.1.1-develop.833(patch_hash=l4nw35jyuqbcpqce4frw6uerfu)(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
       '@proto-kit/module':
         specifier: 0.1.1-develop.833
         version: 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
@@ -251,7 +256,7 @@ importers:
         version: 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/persistance@0.1.1-develop.833)(@proto-kit/sdk@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(bullmq@3.15.8)(o1js@1.6.0)(tsyringe@4.8.0)
       '@proto-kit/library':
         specifier: 0.1.1-develop.833
-        version: 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
+        version: 0.1.1-develop.833(patch_hash=l4nw35jyuqbcpqce4frw6uerfu)(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
       '@proto-kit/module':
         specifier: 0.1.1-develop.833
         version: 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
@@ -502,7 +507,7 @@ importers:
         version: 0.1.1-develop.833(o1js@1.6.0)(tsyringe@4.8.0)
       '@proto-kit/library':
         specifier: 0.1.1-develop.833
-        version: 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
+        version: 0.1.1-develop.833(patch_hash=l4nw35jyuqbcpqce4frw6uerfu)(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
       '@proto-kit/module':
         specifier: 0.1.1-develop.833
         version: 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
@@ -2654,7 +2659,7 @@ packages:
       yargs: 17.7.2
     dev: false
 
-  /@proto-kit/library@0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0):
+  /@proto-kit/library@0.1.1-develop.833(patch_hash=l4nw35jyuqbcpqce4frw6uerfu)(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0):
     resolution: {integrity: sha512-tS3DddBl6LVFam4PdZJuzzfrGHCZPM/vrARuvKL9dlmWVDEPJA3vG9EUkk6xYvsakF8X2jqy8rxX+YBlMwO5MQ==}
     peerDependencies:
       '@proto-kit/common': '*'
@@ -2675,6 +2680,7 @@ packages:
       reflect-metadata: 0.1.14
       tsyringe: 4.8.0
     dev: false
+    patched: true
 
   /@proto-kit/module@0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0):
     resolution: {integrity: sha512-Xc+0e2YrcghOILKILaX0KwlivCkSgmK+tkAhDvMt7nWcRPzPJIlaLjprvm8bEZJfe93gdXD92K4a3+BhvpeD6Q==}
@@ -2746,7 +2752,7 @@ packages:
       tsyringe: ^4.7.0
     dependencies:
       '@proto-kit/common': 0.1.1-develop.833(o1js@1.6.0)(tsyringe@4.8.0)
-      '@proto-kit/library': 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
+      '@proto-kit/library': 0.1.1-develop.833(patch_hash=l4nw35jyuqbcpqce4frw6uerfu)(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(@proto-kit/sequencer@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
       '@proto-kit/module': 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
       '@proto-kit/protocol': 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(o1js@1.6.0)(ts-pattern@4.3.0)(tsyringe@4.8.0)
       '@proto-kit/sequencer': 0.1.1-develop.833(@proto-kit/common@0.1.1-develop.833)(@proto-kit/module@0.1.1-develop.833)(@proto-kit/protocol@0.1.1-develop.833)(o1js@1.6.0)(tsyringe@4.8.0)
