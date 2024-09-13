@@ -44,7 +44,7 @@ const nextConfig = {
         minimize: true,
         minimizer: [
           new TerserPlugin({
-            // minify: TerserPlugin.swcMinify,
+            minify: TerserPlugin.swcMinify,
             terserOptions: {
               sourceMap: false,
               compress: false,
