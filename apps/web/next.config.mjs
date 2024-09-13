@@ -47,7 +47,10 @@ const nextConfig = {
             minify: TerserPlugin.swcMinify,
             terserOptions: {
               sourceMap: false,
-              compress: false,
+              compress: {
+                keep_classnames: true,
+                keep_fnames: true,
+              },
               mangle: {
                 keep_classnames: true,
                 keep_fnames: true,
