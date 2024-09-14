@@ -44,7 +44,7 @@ export function GenresItem({
     >
       <div
         className={
-          'z-[2] flex h-full w-full flex-col items-center justify-center lg:h-[15.625vw]'
+          'z-[2] flex w-full flex-col items-center justify-center h-[15.625vw]'
         }
       >
         <Lottie
