@@ -5,9 +5,9 @@ import { plexMono, museoSlab, plexSans } from './fonts';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import NotificationsContainer from '@zknoid/sdk/components/shared/Notification/NotificationsContainer';
+import './globals.css'; 
 import "@zknoid/games/styles.css";
 import "@zknoid/sdk/styles.css";
-import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://app.zknoid.io'),
