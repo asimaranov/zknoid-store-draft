@@ -38,7 +38,6 @@
     "@zknoid/sdk": "workspace:*",
     "@zknoid/appchain": "workspace:*",
     "@zknoid/chain-games": "workspace:*",
-
     "zod": "^3.22.4",
     "zustand": "^4.5.2"
   },
