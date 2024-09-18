@@ -9,9 +9,9 @@
     "docker:up": "docker compose up",
     "docker:down": "docker compose down",
     "prisma:generate": "turbo run prisma:generate",
-    "env:development": "dotenv -e ./packages/chain/src/environments/development/.env -- pnpm",
-    "env:inmemory": "dotenv -e ./packages/chain/src/environments/inmemory/.env -- pnpm",
-    "env:sovereign": "dotenv -e ./packages/chain/src/environments/sovereign/.env -- pnpm"
+    "env:development": "dotenv -e ./packages/appchain/src/environments/development/.env -- pnpm",
+    "env:inmemory": "dotenv -e ./packages/appchain/src/environments/inmemory/.env -- pnpm",
+    "env:sovereign": "dotenv -e ./packages/appchain/src/environments/sovereign/.env -- pnpm"
   },
   "devDependencies": {
     "prettier": "^3.2.5",

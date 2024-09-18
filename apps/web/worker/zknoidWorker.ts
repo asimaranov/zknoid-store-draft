@@ -30,7 +30,7 @@ import {
   GameRecordProof,
   client,
   Tick,
-} from 'zknoid-chain-dev';
+} from '@zknoid/chain-sdk/src/constants';
 import {
   Ticket,
   PLottery,

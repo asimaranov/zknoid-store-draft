@@ -34,8 +34,11 @@
     "tailwindcss-animate": "^1.0.7",
     "truncate-middle": "^1.0.6",
     "yup": "^1.4.0",
-    "zknoid-chain-dev": "workspace:*",
+    "@zknoid/chain-sdk": "workspace:*",
     "@zknoid/sdk": "workspace:*",
+    "@zknoid/appchain": "workspace:*",
+    "@zknoid/chain-games": "workspace:*",
+
     "zod": "^3.22.4",
     "zustand": "^4.5.2"
   },

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { GameView, ITick } from "./components/GameView";
-import { Bricks } from "zknoid-chain-dev";
+import { Bricks } from "@zknoid/chain-games";
 import { useNetworkStore } from "@zknoid/sdk/lib/stores/network";
 import { useSwitchWidgetStorage } from "@zknoid/sdk/lib/stores/switchWidgetStorage";
 import { useWorkerClientStore } from "@zknoid/sdk/lib/stores/workerClient";

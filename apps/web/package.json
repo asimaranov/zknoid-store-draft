@@ -57,7 +57,7 @@
     "terser-webpack-plugin": "^5.3.10",
     "truncate-middle": "^1.0.6",
     "yup": "^1.4.0",
-    "zknoid-chain-dev": "workspace:*",
+    "@zknoid/chain-sdk": "workspace:*",
     "zod": "^3.22.4",
     "zustand": "^4.5.2"
   },
