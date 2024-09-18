@@ -6,7 +6,7 @@ node_modules
 .pnp.js
 
 # Local env files
-!packages/chain/src/environments/**/.env
+!packages/chain/src/environments
 
 .env
 .env.local
