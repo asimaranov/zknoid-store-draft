@@ -14,7 +14,7 @@ import {
   GameRecordKey,
   LeaderboardIndex,
   LeaderboardScore,
-} from '../arkanoid/types';
+} from '../games/arkanoid/types';
 import { ZNAKE_TOKEN_ID } from '../constants';
 
 export interface IScoreable {
@@ -83,8 +83,13 @@ export class Gamehub<
    */
   @runtimeMethod()
   public async createCompetition(competition: Competition): Promise<void> {
-    const competitionId = (await this.lastCompetitonId.get()).orElse(UInt64.from(0));
-    await this.competitionCreator.set(competitionId, this.transaction.sender.value);
+    const competitionId = (await this.lastCompetitonId.get()).orElse(
+      UInt64.from(0),
+    );
+    await this.competitionCreator.set(
+      competitionId,
+      this.transaction.sender.value,
+    );
     await this.competitions.set(competitionId, competition);
     await this.lastCompetitonId.set(competitionId.add(1));
 
@@ -128,8 +133,8 @@ export class Gamehub<
     });
 
     // Check for registration
-    const registrationNeeded =
-      (await this.competitions.get(competitionId)).value.prereg;
+    const registrationNeeded = (await this.competitions.get(competitionId))
+      .value.prereg;
     const userRegistration = (await this.registrations.get(gameKey)).value;
 
     assert(
@@ -196,12 +201,14 @@ export class Gamehub<
     assert((await this.gotReward.get(key)).value, 'Already got your reward');
     await this.gotReward.set(key, Bool(true));
 
-    let winner = (await this.leaderboard.get(
-      new LeaderboardIndex({
-        competitionId,
-        index: UInt64.zero,
-      }),
-    )).value;
+    let winner = (
+      await this.leaderboard.get(
+        new LeaderboardIndex({
+          competitionId,
+          index: UInt64.zero,
+        }),
+      )
+    ).value;
 
     assert(
       winner.player.equals(this.transaction.sender.value),
@@ -215,9 +222,17 @@ export class Gamehub<
     );
   }
 
-  private async payCompetitionFee(competitionId: UInt64, shouldPay: Bool): Promise<void> {
+  private async payCompetitionFee(
+    competitionId: UInt64,
+    shouldPay: Bool,
+  ): Promise<void> {
     let competition = (await this.competitions.get(competitionId)).value;
-    let fee = Provable.if<ProtoUInt64>(shouldPay, ProtoUInt64, competition.participationFee, ProtoUInt64.zero);
+    let fee = Provable.if<ProtoUInt64>(
+      shouldPay,
+      ProtoUInt64,
+      competition.participationFee,
+      ProtoUInt64.zero,
+    );
 
     await this.balances.transfer(
       ZNAKE_TOKEN_ID,

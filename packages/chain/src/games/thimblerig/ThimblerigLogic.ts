@@ -12,8 +12,8 @@ import {
 } from 'o1js';
 import { UInt64 as ProtoUInt64 } from '@proto-kit/library';
 
-import { MatchMaker } from '../engine/MatchMaker';
-import { Lobby } from '../engine/LobbyManager';
+import { MatchMaker } from '../../engine/MatchMaker';
+import { Lobby } from '../../engine/LobbyManager';
 
 export class RoundIdxUser extends Struct({
   roundId: UInt64,
