@@ -1,11 +1,11 @@
 import { UInt64 } from '@proto-kit/library';
-import { ArkanoidGameHub } from './arkanoid/ArkanoidGameHub';
-import { RandzuLogic } from './randzu/RandzuLogic';
-import { ThimblerigLogic } from './thimblerig/ThimblerigLogic';
+import { ArkanoidGameHub } from './games/arkanoid/ArkanoidGameHub';
+import { RandzuLogic } from './games/randzu/RandzuLogic';
+import { ThimblerigLogic } from './games/thimblerig/ThimblerigLogic';
 import { Balances } from './framework';
 import { ModulesConfig } from '@proto-kit/common';
-import { CheckersLogic } from './checkers';
-import { GuessGame } from './number_guessing';
+import { CheckersLogic } from './games/checkers';
+import { GuessGame } from './games/number_guessing';
 
 const modules = {
   ArkanoidGameHub,
@@ -13,7 +13,7 @@ const modules = {
   Balances,
   RandzuLogic,
   CheckersLogic,
-  GuessGame
+  GuessGame,
 };
 
 const config: ModulesConfig<typeof modules> = {
@@ -24,7 +24,7 @@ const config: ModulesConfig<typeof modules> = {
   },
   RandzuLogic: {},
   CheckersLogic: {},
-  GuessGame: {}
+  GuessGame: {},
 };
 
 export default {

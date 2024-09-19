@@ -1,14 +1,6 @@
-import {
-    Field,
-  UInt64,
-  Bool,
-  SelfProof,
-  Struct,
-  Int64,
-  ZkProgram,
-} from 'o1js';
+import { Field, UInt64, Bool, SelfProof, Struct, Int64, ZkProgram } from 'o1js';
 import { runtimeMethod, runtimeModule } from '@proto-kit/module';
-import { Gamehub } from '../engine/GameHub';
+import { Gamehub } from '../../engine/GameHub';
 import { Bricks, GameInputs } from './types';
 import {
   GameContext,
@@ -42,11 +34,11 @@ export const MapGeneration = ZkProgram({
   },
 });
 
-export class MapGenerationProof extends ZkProgram.Proof(
-  MapGeneration,
-) {}
+export class MapGenerationProof extends ZkProgram.Proof(MapGeneration) {}
 
-export async function initGameProcess(initial: GameContext): Promise<GameProcessPublicOutput> {
+export async function initGameProcess(
+  initial: GameContext,
+): Promise<GameProcessPublicOutput> {
   return new GameProcessPublicOutput({
     initialState: initial,
     currentState: initial,
@@ -86,9 +78,7 @@ export const GameProcess = ZkProgram({
   },
 });
 
-export class GameProcessProof extends ZkProgram.Proof(
-  GameProcess,
-) {}
+export class GameProcessProof extends ZkProgram.Proof(GameProcess) {}
 
 export async function checkGameRecord(
   mapGenerationProof: MapGenerationProof,
