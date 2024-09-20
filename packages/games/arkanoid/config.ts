@@ -11,7 +11,7 @@ import {
 import { LogoMode } from "@zknoid/sdk/constants/games";
 
 const description =
-  "Old but gold game. Beat all the bricks and protect the ball from falling";
+  "Old but gold game. Beat all the bricks and protect the ball from falling. Every game tick is reproduced inside ZK circuit and synced";
 
 const rules = `In Ankanoid, your objective is to break all the bricks on the screen using a bouncing ball and a platform. 
     
